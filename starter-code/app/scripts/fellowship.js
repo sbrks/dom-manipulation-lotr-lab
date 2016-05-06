@@ -25,8 +25,8 @@ var body = document.querySelector('body');
 
 function makeMiddleEarth() {
   // create a section tag with an id of middle-earth
-    var midEarth = document.createElement("section"); 
-        "section".idName="middle-earth";
+    var midEarth = document.createElement('section'); 
+        'section'.idName='middle-earth';
     for (var i=0; i < lands.length; i++) {
   var land = document.createElement('article');
 
@@ -142,37 +142,63 @@ leaveTheShire();
 // Part 7
 
 
+var fellowshipMembers = rivendell.querySelectorAll('li');
+
 function forgeTheFellowShip() {
 
 
   // create a new div called 'the-fellowship' within rivendell
 
-      var theFellowship = rivendell.createElement("div"); 
-      theFellowship.idName = "the-fellowship";
+      var theFellowship = document.createElement('div'); 
+      theFellowship.setAttribute('id', 'the-fellowship');
 
 
   // add each hobbit and buddy one at a time to 'the-fellowship'
-  // after each character is added make an alert that they have joined your party
+
+  for (var i=0; i<fellowshipMembers.length; i++) {
+    theFellowship.appendChild(fellowshipMembers[i]);
+    // after each character is added make an alert that they have joined your party
+    alert(fellowshipMembers[i].textContent + ' has joined the fellowship!');
+  }
+    rivendell.appendChild(theFellowship);
+  
 }
+
+//note that I have relied very heavily on solution code! I can generally start
+//each function and feel on the right track at first (the first line or two), but then
+//I get lost/don't know where to go from there and feel like i don't really know what I'm doing
+//or how one line connects to the next
 
 
 // Part 8
 
-
+var gandalf = fellowshipMembers[0];
 function theBalrog() {
-  // change the 'Gandalf' textNode to 'Gandalf the White'
+// change the 'Gandalf' textNode to 'Gandalf the White'
+  gandalf.textContent = 'Gandalf the White';
+
   // apply style to the element
   // make the background 'white', add a grey border
+  gandalf.style.backgroundColor = "FFF";
+  gandalf.style.borderColor = "#808080";
+
 }
 
+theBalrog();
 
 // Part 9
 
 function hornOfGondor() {
+  window.alert("The horn of gondor has been blown. Boromir's been killed by the Uruk-hai!");
+
   // pop up an alert that the horn of gondor has been blown
   // Boromir's been killed by the Uruk-hai!
   // put a linethrough on boromir's name
   // Remove Boromir from the Fellowship
+ var boro =  buddies[4];
+ var deadBoro = boro.strike();
+
+ 
 }
 
 
